@@ -48,7 +48,7 @@ public class Util {
                 settings.put(Environment.PASS, "qw009719er");
                 settings.put(Environment.DRIVER, "com.mysql.jdbc.Driver");
                 settings.put(Environment.DIALECT, "org.hibernate.dialect.MySQLDialect");
-                settings.put(Environment.SHOW_SQL, "true");
+                //settings.put(Environment.SHOW_SQL, "true");
 
                 configuration.setProperties(settings);
 
