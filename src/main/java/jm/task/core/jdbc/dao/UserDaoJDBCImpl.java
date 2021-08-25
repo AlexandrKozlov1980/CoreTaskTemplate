@@ -7,13 +7,13 @@ import java.sql.*;
 import java.util.ArrayList;
 import java.util.List;
 
-public class UserDaoJDBCImpl extends Util implements UserDao {
+public class UserDaoJDBCImpl implements UserDao {
     public UserDaoJDBCImpl() {
 
     }
 
     public void createUsersTable() throws SQLException {
-        Connection connection = setConnection();
+        Connection connection = Util.setConnection();
         Statement statement = null;
         String sql = "CREATE TABLE users (ID BIGINT NOT NULL AUTO_INCREMENT, NAME VARCHAR(100) NOT NULL, " +
                 "LASTNAME VARCHAR(100) NOT NULL, AGE INT NOT NULL, PRIMARY KEY (ID))";
@@ -39,7 +39,7 @@ public class UserDaoJDBCImpl extends Util implements UserDao {
     }
 
     public void dropUsersTable() throws SQLException {
-        Connection connection = setConnection();
+        Connection connection = Util.setConnection();
         Statement statement = null;
         String sql = "DROP TABLE users";
         try {
@@ -58,7 +58,7 @@ public class UserDaoJDBCImpl extends Util implements UserDao {
     }
 
     public void saveUser(String name, String lastName, byte age) throws SQLException {
-        Connection connection = setConnection();
+        Connection connection = Util.setConnection();
         PreparedStatement preparestatement = null;
         String sql = "INSERT INTO users (NAME, LASTNAME, AGE) VALUES (?, ?, ?)";
         try {
@@ -83,7 +83,7 @@ public class UserDaoJDBCImpl extends Util implements UserDao {
     }
 
     public void removeUserById(long id) throws SQLException {
-        Connection connection = setConnection();
+        Connection connection = Util.setConnection();
         PreparedStatement preparestatement = null;
         String sql = "DELETE FROM users WHERE ID = (?)";
         try {
@@ -105,7 +105,7 @@ public class UserDaoJDBCImpl extends Util implements UserDao {
     }
 
     public List<User> getAllUsers() throws SQLException {
-        Connection connection = setConnection();
+        Connection connection = Util.setConnection();
         Statement statement = null;
         ResultSet result;
         String sql = "SELECT * FROM  users";
@@ -133,7 +133,7 @@ public class UserDaoJDBCImpl extends Util implements UserDao {
     }
 
     public void cleanUsersTable() throws SQLException {
-        Connection connection = setConnection();
+        Connection connection = Util.setConnection();
         Statement statement = null;
         String sql = "TRUNCATE TABLE users";
         try {

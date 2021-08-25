@@ -7,7 +7,7 @@ import jm.task.core.jdbc.model.User;
 import java.sql.SQLException;
 import java.util.List;
 
-public class UserServiceImpl extends UserDaoHibernateImpl implements UserService {
+public class UserServiceImpl implements UserService {
 
     UserDaoHibernateImpl dao = new UserDaoHibernateImpl();
 

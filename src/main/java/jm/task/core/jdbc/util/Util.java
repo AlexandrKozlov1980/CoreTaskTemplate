@@ -22,7 +22,7 @@ public class Util {
 
 
 
-    public Connection setConnection() {
+    public static Connection setConnection() {
         Connection con = null;
         try {
             Class.forName(BD_DRIVER);
