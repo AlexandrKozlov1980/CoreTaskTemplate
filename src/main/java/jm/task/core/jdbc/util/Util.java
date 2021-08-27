@@ -5,6 +5,8 @@ import org.hibernate.SessionFactory;
 import org.hibernate.boot.registry.StandardServiceRegistryBuilder;
 import org.hibernate.cfg.Configuration;
 import org.hibernate.cfg.Environment;
+import org.hibernate.engine.spi.Mapping;
+//import org.hibernate.metamodel.MetadataSources;
 import org.hibernate.service.ServiceRegistry;
 
 import java.sql.Connection;
@@ -47,8 +49,9 @@ public class Util {
                 settings.put(Environment.USER, "root");
                 settings.put(Environment.PASS, "qw009719er");
                 settings.put(Environment.DRIVER, "com.mysql.jdbc.Driver");
-                settings.put(Environment.DIALECT, "org.hibernate.dialect.MySQLDialect");
-                //settings.put(Environment.SHOW_SQL, "true");
+                settings.put(Environment.DIALECT, "org.hibernate.dialect.MySQL5Dialect");
+                settings.put(Environment.SHOW_SQL, "true");
+                settings.put(Environment.HBM2DDL_AUTO, "update");
 
                 configuration.setProperties(settings);
 
